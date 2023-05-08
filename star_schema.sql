@@ -183,7 +183,7 @@ select * from address
     store_key integer references dimStore (store_key),
     sales_amount numeric);
 
-insert into factsales (sales_key, date_key, customer_key, movie_key, store_key, sales_amount)
+insert into factsales( date_key, customer_key, movie_key, store_key, sales_amount)
 select sales_key
        to_char(payment_date :: Date, 'yyyyMMDD'):: integer as date_key,
 	   p.customer_id as customer_key,
