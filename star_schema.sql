@@ -184,7 +184,7 @@ select * from address
     sales_amount numeric);
 
 insert into factsales( date_key, customer_key, movie_key, store_key, sales_amount)
-select sales_key
+select 
        to_char(payment_date :: Date, 'yyyyMMDD'):: integer as date_key,
 	   p.customer_id as customer_key,
 	   i.film_id as movie_key,
